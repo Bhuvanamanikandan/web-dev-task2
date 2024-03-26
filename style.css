@@ -1,0 +1,207 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: linear-gradient(to bottom right, #fdfcfb, #e2d1c3);
+    min-height: 100vh;
+    background-image: url(bgimg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+header {
+    color: #fff;
+    padding: 60px 20px;
+    background-size: cover; /* Ensures the image covers the header area */
+    background-position: center; /* Centers the background image in the header */
+    position: relative;
+}
+
+header .overlay {
+    padding: 20px;
+}
+
+.features-grid, .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.feature-item, .testimonial {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 15px; /* Rounded corners */
+    transition: transform 0.3s ease-in-out;
+    color: #333; /* Change text color to white for better contrast */
+}
+
+#call-to-action {
+    text-align: center;
+    color: white;
+}
+
+/* Call to Action Text Color */
+#call-to-action, #call-to-action h2, #call-to-action p, #call-to-action button {
+    color: #fff; /* Sets text color to white */
+}
+
+/* Gallery Preview Text Color */
+#gallery-preview, #gallery-preview h2 {
+    color: #fff; /* Sets text color to white */
+}
+
+/* Course Features Text Color */
+#course-features, #course-features h2, #course-features ul li {
+    color: #fff; /* Sets text color to white */
+}
+
+.feature-item:hover, .testimonial:hover {
+    transform: scale(1.05);
+}
+
+.feature-item img, .gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.gallery-grid {
+    margin-bottom: 20px; /* Adds some spacing below the gallery */
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#call-to-action button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners for button */
+    color: #333;
+}
+
+/* Testimonials section adjustments */
+#testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the testimonials */
+    gap: 20px; /* Adds space between testimonials */
+    padding: 20px;
+    color: white;
+}
+
+.testimonial {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+    display: inline-flex; /* Makes the testimonial container fit its content */
+    align-items: center; /* Aligns the items (if there are multiple elements) vertically */
+    justify-content: center; /* Centers the content horizontally */
+    color: #333;
+    margin: 0 auto; /* Centers the testimonial blocks horizontally */
+    max-width: 80%; /* Ensures testimonials don't become too wide on larger screens */
+}
+
+.testimonial p {
+    margin: 0; /* Removes default paragraph margins for cleaner spacing */
+}
+
+/* General Button Styling */
+button, .register-button, .enroll-button a {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .register-button:hover, .enroll-button a:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* Black with more opacity */
+    animation: fadeIn 0.5s; /* Fade in the background */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto; /* Increase the top margin percentage to center vertically after making the box smaller */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; /* Reduce the width for a smaller box */
+    max-width: 500px; /* You can also set a max-width to ensure it doesn't get too small on narrow screens */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    animation: slideIn 0.5s;
+    border-radius: 10px;
+}
+
+@keyframes slideIn {
+    from { top: -300px; opacity: 0; }
+    to { top: 0; opacity: 1; }
+}
+
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+:target {
+    display: block;
+}
+
+
+input[type="text"], input[type="email"] {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
